@@ -15,24 +15,24 @@ const ContactForm = (callback) => {
     }
  
     return (
-        <section class='container'>
-            <h2 class='form-title'>Contact Form</h2>
-        <form class='justify-content-center' id='contact-form'>
+        <section className='container'>
+            <h2 className='form-title'>Contact Form</h2>
+        <form className='justify-content-center' id='contact-form'>
             <div>
                 <label htmlFor='userName'>Name:</label>
-                <input class='form-control' type='text' name='name' defaultValue={userName} onBlur={handleFieldChange}></input>
+                <input className='form-control' type='text' name='name' defaultValue={userName} onBlur={handleFieldChange}></input>
             </div>
             <div>
                 <label htmlFor='email'>Email:</label>
-                <input class='form-control' type='text' name='email' defaultValue={email} onBlur={handleFieldChange}></input>
+                <input className='form-control' type='text' name='email' defaultValue={email} onBlur={handleFieldChange}></input>
             </div>
             <div>
                 <label htmlFor='message'>Message:</label>
-                <textarea class='form-control' type='text' name='message' defaultValue={message} onBlur={handleFieldChange}></textarea>
+                <textarea className='form-control' type='text' name='message' defaultValue={message} onBlur={handleFieldChange}></textarea>
             </div>
 
             <div>
-                <button class='btn btn-outline-dark' type='submit' onSubmit={handleSubmit}>Submit</button>
+                <button className='btn btn-outline-dark' type='submit' onSubmit={handleSubmit}>Submit</button>
             </div>
         </form>
         </section>

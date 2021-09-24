@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 
 // contactForm is the functional component
 // 'callback' => the function that gets called when the user submits the form
-const contactForm = (callback) => {
+const ContactForm = (callback) => {
     //set the input fields, useState is a hook that initializes a state & setter function
-    const [field, setField] = useState({ userName: '', email: '', message: ''});
+    const [fields, setField] = useState({ userName: '', email: '', message: ''});
 
+    const [userName, email, message] = fields
     // function handles the submit event and prevents default of browser, and calls the 'callback' function
     const handleSubmit = (event) => {
         if(event){
@@ -45,6 +46,6 @@ const contactForm = (callback) => {
     )
 };
 
-export default contactForm;
+export default ContactForm;
 
 

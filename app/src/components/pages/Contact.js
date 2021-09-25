@@ -3,10 +3,17 @@ import React, { useState } from 'react';
 // 'callback' => the function that gets called when the user submits the form
 const ContactForm = (callback) => {
     //set the input fields, useState is a hook that initializes a state & setter function
-    const [field, setField] = useState({});
-    const [field, setField] = useState({ userName: '', email: '', message: ''});
+    const [fields, setField] = useState({ userName: '', email: '', message: ''});
 
+    const [userName, email, message] = fields;
     // function handles the submit event and prevents default of browser, and calls the 'callback' function
+
+    const handleSubmit = (event) => {
+        if(event){
+            event.preventDefault();
+        }
+        callback();
+    }
 
     // handles when the user is inputting into the fields
     const handleFieldChange = (event) => {

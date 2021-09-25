@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Header from './pages/Header';
+// import Header from './pages/Header';
 import NavTabs from './NavTabs';
 import About from './pages/About';
-import Footer from './pages/Footer';
+// import Footer from './pages/Footer';
 import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact';
 import Resume from './pages/Resume'

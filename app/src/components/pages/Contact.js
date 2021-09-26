@@ -1,50 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-// 'callback' => the function that gets called when the user submits the form
-const ContactForm = (callback) => {
-    //set the input fields, useState is a hook that initializes a state & setter function
-    const [fields, setField] = useState({ userName: '', email: '', message: ''});
+const ContactForm = () => {
+  return (
+    <div className='contact-form'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-12 text-center'>
+            <div className='contactForm'>
+              <form id='contact-form' noValidate>
+                {/* Row 1 of form */}
+                <div className='row formRow'>
+                  <div className='col-6'>
+                    <input
+                      type='text'
+                      name='name'
+                      className='form-control formInput'
+                      placeholder='name'
+                    ></input>
+                  </div>
 
-    const [userName, email, message] = fields;
-    // function handles the submit event and prevents default of browser, and calls the 'callback' function
-
-    const handleSubmit = (event) => {
-        if(event){
-            event.preventDefault();
-        }
-        callback();
-    }
-
-    // handles when the user is inputting into the fields
-    const handleFieldChange = (event) => {
-        event.persist();
-        setField(field => ({...field, [event.target.userName]: event.target.value}));
-    }
- 
-    return (
-        <section className='container'>
-            <h2 className='form-title'>Contact Form</h2>
-        <form className='justify-content-center' id='contact-form'>
-            <div>
-                <label htmlFor='userName'>Name:</label>
-                <input className='form-control' type='text' name='name' defaultValue={userName} onBlur={handleFieldChange}></input>
+                  <div className='col-6'>
+                    <input
+                      type='email'
+                      name='email'
+                      className='form-control formInput'
+                      placeholder='Email address'
+                    ></input>
+                  </div>
+                </div>
+                
+                {/* Row 2 of form */}
+                <div className='row formRow'>
+                  <div className='col'>
+                    <textarea
+                      rows={3}
+                      name='message'
+                      className='form-control formInput'
+                      placeholder='Message'
+                    ></textarea>
+                  </div>
+                </div>
+                <button className='submit-btn' type='submit'>
+                  Submit
+                </button>
+              </form>
             </div>
-            <div>
-                <label htmlFor='email'>Email:</label>
-                <input className='form-control' type='text' name='email' defaultValue={email} onBlur={handleFieldChange}></input>
-            </div>
-            <div>
-                <label htmlFor='message'>Message:</label>
-                <textarea className='form-control' type='text' name='message' defaultValue={message} onBlur={handleFieldChange}></textarea>
-            </div>
-
-            <div>
-                <button className='btn btn-outline-dark' type='submit' onSubmit={handleSubmit}>Submit</button>
-            </div>
-        </form>
-        </section>
-    )
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-    
 export default ContactForm;
